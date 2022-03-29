@@ -1,0 +1,92 @@
+<?php defined('IN_DESTOON') or exit('Access Denied');?><!--9p-s-->
+<div class="m-head borderno clearfix wrap">
+<div class="m-txt">
+<div class="icon-redbar"></div>
+<h2 class="fl">按省级查找</h2>
+<div class="hotcity fl">
+<ul>
+<li><a href="javascript:void(0)" title="北京"
+>北京</a></li>
+<li><a href="javascript:void(0)" title="上海"
+>上海</a></li>
+<li><a href="javascript:void(0)" title="天津"
+>天津</a></li>
+<li><a href="javascript:void(0)" title="重庆"
+>重庆</a></li>
+<li><a href="javascript:void(0)" title="河北"
+>河北</a></li>
+<li><a href="javascript:void(0)" title="山西"
+>山西</a></li>
+<li><a href="javascript:void(0)" title="内蒙古"
+>内蒙古</a></li>
+<li><a href="javascript:void(0)" title="辽宁"
+>辽宁</a></li>
+<li><a href="javascript:void(0)" title="吉林"
+>吉林</a></li>
+<li><a href="javascript:void(0)" title="黑龙江"
+>黑龙江</a></li>
+<li><a href="javascript:void(0)" title="江苏"
+>江苏</a></li>
+<li><a href="javascript:void(0)" title="浙江"
+>浙江</a></li>
+<li><a href="javascript:void(0)" title="安徽"
+>安徽</a></li>
+<li><a href="javascript:void(0)" title="福建"
+>福建</a></li>
+<li><a href="javascript:void(0)" title="江西"
+>江西</a></li>
+<li><a href="javascript:void(0)" title="山东"
+>山东</a></li>
+<li><a href="javascript:void(0)" title="河南"
+>河南</a></li>
+<li><a href="javascript:void(0)" title="湖北"
+>湖北</a></li>
+<li><a href="javascript:void(0)" title="湖南"
+>湖南</a></li>
+<li><a href="javascript:void(0)" title="广东"
+>广东</a></li>
+<li><a href="javascript:void(0)" title="广西"
+>广西</a></li>
+<li><a href="javascript:void(0)" title="海南"
+>海南</a></li>
+<li><a href="javascript:void(0)" title="四川"
+>四川</a></li>
+<li><a href="javascript:void(0)" title="贵州"
+>贵州</a></li>
+<li><a href="javascript:void(0)" title="云南"
+>云南</a></li>
+<li><a href="javascript:void(0)" title="西藏"
+>西藏</a></li>
+<li><a href="javascript:void(0)" title="陕西"
+>陕西</a></li>
+<li><a href="javascript:void(0)" title="甘肃"
+>甘肃</a></li>
+<li><a href="javascript:void(0)" title="青海"
+>青海</a></li>
+<li><a href="javascript:void(0)" title="宁夏"
+>宁夏</a></li>
+<li><a href="javascript:void(0)" title="新疆"
+>新疆</a></li>
+<li><a href="javascript:void(0)" title="台湾"
+>台湾</a></li>
+<li><a href="javascript:void(0)" title="香港"
+>香港</a></li>
+<li><a href="javascript:void(0)" title="澳门"
+>澳门</a></li>
+</ul>
+</div>
+</div>
+</div>
+<script>
+jQuery(".m-head").slide({
+mainCell: ".hotcity ul",
+effect: "leftLoop",
+autoPlay: true,
+vis: 9,
+scroll: 1
+});
+
+$(".hotcity ul li a").click(function(){
+msg(0,'该省份分类功能暂未开放!');
+})
+</script>

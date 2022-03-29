@@ -1,0 +1,28 @@
+<div class="m-head catname borderno clearfix wrap">
+				<div class="m-txt">
+					<h2 class="fl">按类目查找</h2>
+					<div class="hotcity fl">
+						<ul>
+							<?php
+								$tags = [];
+								$result = $db->query("select * from ".$DT_PRE."category where level in(2,3) and moduleid=16 order by catid asc limit 30");
+								while($r = $db->fetch_array($result)) {
+								$tags[] = $r;
+								}
+							?>
+							{loop $tags $key $val}
+							<li><a href="/{$MODULE[16][module]}/{if $val[level] == 2}comlist{else}goodlist{/if}.php?catid={$val[catid]}" title="{$val[catname]}" target="_blank">{$val[catname]}</a></li>
+							{/loop}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<script>
+				jQuery(".catname").slide({
+					mainCell: ".hotcity ul",
+					effect: "leftLoop",
+					autoPlay: true,
+					vis: 9,
+					scroll: 1
+				});
+			</script>

@@ -1,0 +1,9 @@
+@charset "utf-8";
+/*
+[DTmuban Template] Copyright (c) 2010-2020 www.dtmuban.com
+This is not a free template. Please buy the authentic license.
+Author: Xiaohei, QQ:2909458585. Version: ST08_v8, time: 20200815.
+Special note: do not modify this document without permission.
+*/
+body {_background-image:url('../images/spacer.gif');_background-attachment:fixed;}
+#head {_position:absolute;_top:expression(documentElement.scrollTop);}

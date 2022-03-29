@@ -1,0 +1,2 @@
+//QQ:290948585 xiaohei www.dtmuban.com  ST06 20171016
+(function(c){c.fn.textSlider=function(d){var a=c.extend({scrollHeight:30,line:1,speed:"normal",timer:1E3},d);this.each(function(){function e(){b.animate({"margin-top":h},a.speed,function(){for(i=0;i<a.line;i++)b.find("li:first").appendTo(b);b.css("margin-top",0)})}var f=c(this),b=f.children("ul"),d=b.find("li").height(),h=-(a.line*d);f.hover(function(){clearInterval(g)},function(){g=setInterval(e,a.timer)});var g=setInterval(e,a.timer)})}})(jQuery);

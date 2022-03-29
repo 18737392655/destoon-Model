@@ -1,0 +1,142 @@
+<!-- 公共header -->
+	{template 'header', 'common'}
+<!-- 公共header -->
+
+<!-- 新加入css 叠加样式 -->
+	<link rel="stylesheet" href="{DT_SKIN}/static/css/other.css" type="text/css" />
+	<link rel="stylesheet" href="{DT_SKIN}/static/css/news.css" type="text/css" />
+	<style type="text/css">
+		.post-lead, .post-lead *{
+			font-size: 13px;
+		}
+		.post-lead table tr td:first-child{
+			width: 33%;
+		}
+	</style>
+<!-- 新加入css 叠加样式 -->
+	
+<!-- 公共导航菜单 -->
+	{template 'topmenu', 'common'}
+<!-- 公共导航菜单 -->
+
+<!-- 公共轮播图 -->
+	{template 'banner', 'common'}
+<!-- 公共轮播图 -->
+
+
+<div class="wrap flex">
+			<div class="post-content-main pull-left">
+				<h1 class="post-title">{$title}</h1>
+				<div class="post-info clearfix">
+					<p class="pull-left"><i class="n-i n-i-author"></i><em>{$editor}</em></p>
+					<p class="pull-left"><i class="n-i n-i-time"></i>发布时间：<em>{date('Y-m-d H:i:s',$addtime)}</em></p>
+					{if $level==1}<a class="post-type pull-right">热点</a>{/if}
+					<p class="pull-right"><i class="n-i n-i-view"></i>{$hits}</p>
+					<a href="#postShare" class="post-topshare pull-right" onclick="Dshare({$moduleid}, {$itemid});"><i class="n-i n-i-share"></i>分享</a>
+				</div>
+				<div class="post-body clearfix">
+					
+					
+					<div class="post-body-main pull-right" style="width: 100%">
+						
+						<div class="post-text" id="content">
+							<div class="content" id="article">
+								{$content}
+							</div>
+						</div>
+
+						<!--上下篇-->
+						<ul class="post-prev-next clearfix">
+							{php $tags1=tag("table=exhibit_8&condition=itemid<".$itemid." and status=3&pagesize=1&order=itemid desc&template=null");}
+							{loop $tags1 $key1 $val1}
+							<li class="post-prev pull-left">
+								<a class="ami" href="{$MOD[linkurl]}{$val1[linkurl]}" title="{$val1[title]}">{$val1[title]}</a>
+							</li>
+							{/loop}
+							{php $tags2=tag("table=exhibit_8&condition=itemid>".$itemid." and status=3&pagesize=1&order=itemid asc&template=null");}
+							{loop $tags2 $key2 $val2}
+							<li class="post-next pull-left" style="margin-left: 24%;">
+								<a class="ami" href="{$MOD[linkurl]}{$val2[linkurl]}" title="{$val2[title]}">{$val2[title]}</a>
+							</li>
+							{/loop}
+						</ul>
+						<!--上下篇 end-->
+
+						<script type="text/javascript" src="{DT_SKIN}/static/js/comment.js"></script>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="post-content-side pull-right">
+				<blockquote class="post-lead" style="margin: 10px 0px 30px 20px;">
+					<table cellspacing="1" cellpadding="10" width="100%" class="ctb" style="font-size: 13px;">
+					<tr>
+						<td class="ltd">展会日期</td>
+						<td class="rtd">{$fromtime} 至 {$totime}</td>
+					</tr>
+					<tr>
+						<td class="ltd">展出城市</td>
+						<td class="rtd"><?php echo $city?$city:'暂无'?></td>
+					</tr>
+					<tr>
+						<td class="ltd">展出地址</td>
+						<td class="rtd"><a href="{DT_PATH}api/address.php?auth={encrypt($address.'|'.$title, DT_KEY.'MAP')}" target="_blank">{$address}</a></td>
+					</tr>
+					<tr>
+						<td class="ltd">展馆名称</td>
+						<td class="rtd">{$hallname}</td>
+					</tr>
+					<tr>
+						<td class="ltd">主办单位</td>
+						<td class="rtd">{$sponsor}</td>
+					</tr>
+					{if $undertaker}
+					<tr>
+						<td class="ltd">承办单位</td>
+						<td class="rtd">{$undertaker}</td>
+					</tr>
+					{/if}			
+					</table>
+				</blockquote>
+				
+				<div class="post-side-module" style="margin: 10px 0px 30px 20px;background: #fff;padding: 8px 10px;">
+					<div class="post-side-module-hd">展会推荐</div>
+					<div class="post-side-module-bd">
+						{php $tags15=tag("table=exhibit_8&condition=level=1 and catid<>33&status=3&pagesize=6&order=addtime desc&template=null");}
+						{loop $tags15 $key15 $val14}
+						<a href="" target="_blank" class="post-recommend-card clearfix" title="{$val14[title]}">
+							<img class="post-recommend-card-img pull-left" src="{$val14[thumb]}"
+								alt="{$val14[title]}" />
+							<p class="post-recommend-card-txt">{$val14[title]}</p>
+						</a>
+						{/loop}
+					</div>
+				</div>
+				
+				<div class="post-jd-ad mt30">
+				</div>
+			</div>
+		</div>
+		
+		<!--12友情链接-->
+			<div class="wrap" id="friendly">
+				<!-- 引入公共部友情链接 -->
+					{template 'friendly', 'common'}
+				<!-- 引入公共部友情链接 -->
+			</div>
+			<!--友情链接E-->
+			
+			
+		<!-- 主题部分结束 -->
+		
+		
+		<!-- 右侧导航 -->
+			{template 'siderbar-right', 'common'}
+		<!-- 右侧导航 -->
+		
+		<!-- 公共底部 -->
+			{template 'footer', 'common'}
+		<!-- 公共底部 -->
+		
+		

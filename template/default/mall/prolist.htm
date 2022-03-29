@@ -1,0 +1,219 @@
+<!-- 公共header -->
+	{template 'header', 'common'}
+<!-- 公共header -->
+
+<!-- 新加入css 叠加样式 -->
+	<link rel="stylesheet" href="{DT_SKIN}/static/css/other.css" type="text/css" />
+<!-- 新加入css 叠加样式 -->
+
+<!-- 公共导航菜单 -->
+	{template 'topmenu', 'common'}
+<!-- 公共导航菜单 -->
+
+<!-- 公共轮播图 -->
+	{template 'banner', 'common'}
+<!-- 公共轮播图 -->
+
+<!--广告位one-->
+	{php $tags=tag("table=ad&condition=pid=26 and status=3 and title='one'&pagesize=1&order=edittime asc&template=null");}
+	{loop $tags $key $val}
+	<div class="wrap">
+		<div class="rel aag-90"><img src="{$val[image_src]}" width="1200" height="90" alt="" />
+			<!--i class="icon_tg"></i-->
+			<div class="adicon">广告</div>
+		</div>
+	</div>
+	{/loop}
+
+	<!-- 主题部分开始 -->
+	<script type="text/javascript" src="{DT_SKIN}/static/js/xhindexlou1.js"></script>
+	
+	<?php $comname = $_GET['comname'];?>
+	
+	<div class="wrap main" id="ixh-01">
+				<div class="m-head clearfix">
+					<div class="m-txt">
+						<h2 class="fl"><a href="" target="_blank" le="$comname">{$comname}
+	</a></h2>
+					</div>
+					<div class="txt-hot fr">
+						<a href="" class="m-more" title="$comname" target="_blank">更多</a>
+					</div>
+				</div>
+				<div class="main-body clearfix flex">
+					<div class="m-left lou1">
+						<!--楼层左侧幻灯3张广告位180x260-->
+						<div class="f-slide js-slide buy-the-card">
+							<a href="" target="_blank" class="buy-btn">预订此位<span
+									class="iconfont icon-angle-double-right"></span></a>
+							<ul class="stack-slide">
+								{php $tags1=tag("table=ad&condition=title='".$comname."' and status=3&pagesize=3&order=addtime asc&template=null");}
+								{loop $tags1 $key1 $val1}
+								<li class="slide-item active"><a href="###" class="u-img" target="_blank">
+									<img src="{$val1[image_src]}" alt="{$val1[introduce]}">
+									<div class="slide-name">{$val1[introduce]}</div>
+									</a></li>
+								{/loop}
+							</ul>
+							<a href="javascript:;" class="btn_hda prev" id="prev"></a>
+							<a href="javascript:;" class="btn_hda next" id="next"></a>
+							<div class="points"><a href="javascript:;" class="blue"><i></i></a><a
+									href="javascript:;"><i></i></a><a href="javascript:;"><i></i></a></div>
+						</div>
+					</div>
+					<div class="m-right two three">
+						<div class="mr-top clearfix">
+							<div class="mrt-brand">
+								<div class="mrtb-tit"><span class="fr"><a onclick="msg(0,'暂未开放该功能!')" style="color: #777777;">公司官网</a> </span><i class="icon-redbar"></i>{$comname} · 旗下产品
+								</div>
+								<div class="mrtb-con">
+									<!--最新当前分类下的推荐1公司-->
+									<div class="list_mark">
+										{php $tags=tag("table=mall_16&condition=brand='".$comname."'&template=null");}
+										<?php
+										    $catid = [];
+											foreach($tags as $item){
+												$catid[] = $item['catid'];
+											}	
+											$catid = array_flip($catid);
+											$catid = array_flip($catid);
+											/* 使用array_merge()函数修复键值*/
+											$catid = array_merge($catid);
+											
+										?>
+										
+										{loop $catid $cat_key $cat_val}
+											{php $tags2=tag("table=category&condition=catid='".$cat_val."' and level=3&order=catid asc&template=null");}
+											{loop $tags2 $key2 $val2}
+												<li class="active">{$val2[catname]}</li>
+											{/loop}
+										{/loop}
+										<div style="clear:both"></div>
+									</div>
+									{loop $catid $cat_key $cat_val}
+										<ul class="mrtb-list" style="display: {if $key3==0}block{/if};">
+											<div class="maxch">
+												{php $tags4=tag("table=mall_16&condition=catid='".$cat_val."' and status=3 and brand='".$comname."'&order=catid asc&template=null");}
+												{loop $tags4 $key4 $val4}
+													<div class="mrbch">
+														<div class="mrb">
+															<a href="/{$MODULE[16][module]}/{$val4[linkurl]}" title="" target="_blank">
+																<img alt="" src="{$val4[thumb]}" class="lazy"
+																	
+																	style="display: inline;"></a>
+														</div>
+														<p class="tit"><a href="" title="{$val4[title]}" target="_blank">{$val4[title]}</a></p>
+														<p class="mprice">面议</p>
+													</div>
+												{/loop}
+												
+												<div style="clear: both;">
+													
+												</div>
+											</div>
+										</ul>
+									{/loop}
+									
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					
+					<!--推荐产品S-->
+					<div class="wen clearfix two">
+						<!-- 获取一级分类的catname -->
+						{php $tags6=tag("table=category&condition=catid='".$tags2[0][parentid]."'&template=null");}
+						<?php while($tags6[0][level]!=1){ ?>
+							{php $tags6=tag("table=category&condition=catid='".$tags6[0][parentid]."'&template=null");}
+						<?php }?>
+						
+						{php $tags5=tag("table=ad&condition=pid=26 and status=3 and title='".$comname."'&pagesize=1&order=edittime asc&template=null");}
+						{loop $tags5 $key5 $val5}
+						<div class="mrtb-tit"><span class="fr">{$tags6[0][catname]}实力工厂</span><i class="icon-redbar"></i>{$val5[title]} · {$val5[introduce]}
+						</div>
+						
+						
+						<div class="wrap" style="margin: 10px auto;">
+							<div class="rel aag-90"><img src="{$val5[image_src]}" width="1200" height="90" alt="" />
+								<div class="adicon">广告</div>
+							</div>
+						</div>
+						{/loop}
+						
+						<div class="mrtb-tit"><span class="fr">其他{$tags6[0][catname]}实力工厂</span><i class="icon-redbar"></i>猜你想要
+						</div>
+						
+						
+						<div class="maxch">
+							<!-- 获取除了该产房的属于该一级分类的其他产品； -->
+							<?php $g_array = [];?>
+							{loop $catid $cat_key $cat_val}
+								{php $tags8=tag("table=mall_16&condition=catid='".$cat_val."' and status=3 and brand!='".$comname."'&order=catid asc&template=null");}
+								{loop $tags8 $key8 $val}
+								 <?php $g_array[] = $val;?>
+								{/loop}
+							{/loop}
+							
+								<?php $tags7 = $g_array;?>
+								{loop $tags7 $key7 $val7}
+									{if $key7 < 6}
+									<div class="mrbch">
+										<div class="mrb">
+											<a href="/{$MODULE[16][module]}/{$val7[linkurl]}" title="" target="_blank">
+												<img alt="" src="{$val7[thumb]}" class="lazy"
+													
+													style="display: inline;"></a>
+										</div>
+										<p class="tit"><a href="" title="{$val7[title]}" target="_blank">{$val7[title]}</a></p>
+										<p class="mprice">面议</p>
+									</div>
+									{/if}
+								{/loop}
+							<div style="clear: both;">
+								
+							</div>
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+			
+	
+	
+	<!-- 按照省份、分类 -->
+		{template 'area', 'common'}
+	<!-- 按照省份分类 -->
+	
+	<!-- 按照其他类目分类 -->
+		{template 'cate', 'common'}
+	<!-- 按照其他类目分类 -->
+	
+	<div class="m-head borderno clearfix wrap" id="font">
+		<!-- 引入公共部字母分类 -->
+			{template 'font', 'common'}
+		<!-- 引入公共部字母分类 -->
+	</div>
+	
+	<!--12友情链接-->
+	<div class="wrap" id="friendly">
+		<!-- 引入公共部友情链接 -->
+			{template 'friendly', 'common'}
+		<!-- 引入公共部友情链接 -->
+	</div>
+	<!--友情链接E-->
+	
+	
+<!-- 主题部分结束 -->
+
+
+<!-- 右侧导航 -->
+	{template 'siderbar-right', 'common'}
+<!-- 右侧导航 -->
+
+<!-- 公共底部 -->
+	{template 'footer', 'common'}
+<!-- 公共底部 -->
+

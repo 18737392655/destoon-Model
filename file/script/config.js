@@ -1,0 +1,1 @@
+var DTPath = "http://wellsmodel.make.com/";var DTMob = "http://jpzzw.ja39.7890010.com/mobile/";var SKPath = "http://wellsmodel.make.com/skin/default/";var MEPath = "http://jpzzw.ja39.7890010.com/member/";var DTEditor = "fckeditor";var CKDomain = "";var CKPath = "/";var CKPrex = "cft_";

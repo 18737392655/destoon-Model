@@ -1,0 +1,98 @@
+<!-- 新加入css 叠加样式 -->
+	<link rel="stylesheet" href="{DT_SKIN}/static/css/other.css" type="text/css" />
+	<style>
+		.m-left{
+			float: unset;
+			height: auto !important;
+			width: 280px;
+		}
+		#contact{
+			border: 0px;
+		}
+		.companyName{
+			background: #efefef;
+		}
+		.contactUs a{
+			width: 139px;
+			padding-left: 104px;
+		}
+	</style>
+<!-- 新加入css 叠加样式 -->
+{if $user_status == 3}
+			<div class="m-left lou1 contact proRight">
+				
+				{if $member}
+				<div id="contact">
+					<div class="companyName">
+						<h3>{$member[company]}</h3>
+						<div class="jwsy"><a href="{$MODULE[2][linkurl]}friend.php?action=add&username={$member[username]}" class="jwsy1" rel="nofollow">+ 加为商友</a> 
+						<a href="{$MODULE[2][linkurl]}message.php?action=send&touser={$member[username]}" class="jwsy2" rel="nofollow">发送信件</a>
+							<font class="jwsy3">{if online($member[userid])==1}<font>当前在线</font>{else}当前离线{/if}</font>
+						</div>
+					</div>
+					{if $member[vip]}
+					<p class="mt10" style="position: relative;"><i>会员级别：</i>
+						<font class="level_bg"><span title="VIP会员"><i class="icon icon-vip"></i><em
+									class="fl v-year product">{$member[vip]}</em><em class="fl vip-name">VIP会员</em></span></font>
+					</p>
+					{/if}
+					{if $member[deposit]}
+					<p class="px12"><i>已缴纳：</i><strong class="f_red">{$member[deposit]}</strong> 元保证金</p>
+					{/if}
+					<p class="px12"><i>我的勋章：</i> 
+					{if $member[vcompany]}&nbsp;<img src="{$MODULE[2][linkurl]}image/v_company.gif" width="16" height="16" align="absmiddle" title="通过工商认证"/>{/if}
+					{if $member[vtruename]}&nbsp;<img src="{$MODULE[2][linkurl]}image/v_truename.gif" width="16" height="16" align="absmiddle" title="通过实名认证"/>{/if}
+					{if $member[vbank]}&nbsp;<img src="{$MODULE[2][linkurl]}image/v_bank.gif" width="16" height="16" align="absmiddle" title="通过银行帐号认证"/>{/if}
+					{if $member[vmobile]}&nbsp;<img src="{$MODULE[2][linkurl]}image/v_mobile.gif" width="16" height="16" align="absmiddle" title="通过手机认证"/>{/if}
+					{if $member[vemail]}&nbsp;<img src="{$MODULE[2][linkurl]}image/v_email.gif" width="16" height="16" align="absmiddle" title="通过邮件认证"/>{/if}
+					{if $member[validated]}&nbsp;<img src="{DT_STATIC}file/image/check-ok.png" align="absmiddle"/> 通过{$member[validator]}认证{/if}
+					<a href="{userurl($member[username], 'file=credit')}" target="_blank">[诚信档案]</a></p>
+					<p><i>在线客服：</i>
+					{if $member[username] && $DT[im_web]}{im_web($member[username].'&mid='.$moduleid.'&itemid='.$itemid)}&nbsp;{/if}
+						<a onclick="msg(0,'暂未开放该功能!')" target="_blank" rel="nofollow">
+						   <img src="http://amos.alicdn.com/online.aw?v=2&uid=bydkj88&site=cnalichn&s=6&charset=UTF-8"
+								title="点击旺旺交谈/留言" alt="" align="absmiddle"
+								onerror="this.src=DTPath+'file/image/ali-off.gif';"
+								onload="if(this.width>20)this.src=SKPath+'image/ali-off.gif';" /></a> 
+					</p>
+					<!-- 企业二维码 -->
+	
+					<!-- 公司信息 -->
+					{if $moduleid == 5 || $moduleid == 6}
+					<div class="companyInfo">
+						<a class="website px12" onclick="msg(0,'店铺暂未开放!')" title="进入店铺" target="_blank" rel="nofollow">进入店铺</a>
+						<a class="introduce px12" onclick="openbox('{$member[business]}')" title="公司介绍" target="_blank">公司介绍</a>
+						<a class="position px12" onclick="openbox('{$member[address]}')" title="公司地址" target="_blank">公司地址</a>
+						<a class="infos px12" onclick="openbox('{$content}')" title="{$item}产品信息" target="_blank">产品信息</a>
+					</div>
+					{/if}
+					<!-- 联系企业 -->
+					{if $moduleid == 5 || $moduleid == 6}
+					<div class="contactUs">
+						<a class="contact" onclick="openbox('{$member[telephone]}')" target="_blank">联系我们</a>
+						<a class="inquiry" target="_blank" href="{$MODULE[2][linkurl]}chat.php?touser={$member[username]}&mid={$moduleid}&itemid={$itemid}" title="在线询价">在线询价</a>
+					</div>
+					{/if}
+				</div>
+				{/if}
+			</div>
+			{/if}
+			<!-- 联系我们滑动事件 -->
+			<script type="text/javascript">
+				$(document).ready(function(){
+				   var a,b,c;
+					a = $(window).height();    //浏览器窗口高度
+					var group = $("#scroll");
+					$(window).scroll(function(){
+					    b = $(this).scrollTop();
+					    c = 500;    //元素距离文档（document）顶部的高度
+					    if(b<c){
+					       $(".m-left.lou1.contact").removeClass('fixed');
+					    }else{
+					       $(".m-left.lou1.contact").addClass('fixed');
+					    }
+					});
+				});
+				
+				
+			</script>

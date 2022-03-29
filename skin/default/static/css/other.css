@@ -1,0 +1,457 @@
+/* 产品列表 bussnessList 叠加样式 */
+.m-right.two {
+	height: 490px;
+}
+
+.m-right.two .mrt-key {
+	width: 255px;
+	height: auto;
+}
+
+.m-right.two .mrt-key ul {
+	width: 235px;
+}
+
+.m-right.two .mrt-key ul li {
+	width: 105px;
+	text-align: center;
+}
+
+.m-right.two .mr-top {
+	display: flex;
+}
+
+.m-right.two .mrt-brand {
+	flex: 1;
+}
+
+.m-right.two .mrt-brand .mrtb-con {
+	width: 95.6%;
+}
+
+.m-right.two .mrt-brand .mrtb-name .des {
+	float: left;
+	height: 30px;
+	line-height: 35px;
+	font-size: 12px;
+	color: #a9a6a6;
+	width: 67%;
+	overflow: hidden;
+}
+
+.m-right.two .mrtb-name {
+	padding: 14px 0 17px;
+}
+
+.m-right.two .mrtb-tag {
+	width: 35px;
+}
+
+.wen.two {
+	width: 1195px;
+}
+
+.wen.two .maxch {
+	margin-bottom: 10px;
+}
+
+.wen.two .mrbch {
+	width: 199px;
+}
+
+/* 产品列表proList 叠加样式 */
+
+
+.m-right.two.three {
+	height: auto;
+}
+
+.m-right.two.three .mrbch {
+	width: 185px;
+}
+
+.m-right.two.three .list_mark {
+	position: unset;
+}
+
+.m-right.two.three .list_mark li {
+	padding: 5px 10px;
+	width: auto;
+	height: 20px;
+	line-height: 20px;
+	margin-bottom: 7px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.m-right.two.three .list_mark li.active {
+	color: #fff;
+}
+
+.main-body.flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.m-right.two.three .mrtb-con {
+	height: auto;
+}
+
+.mrtb-con.product .m-left {
+	width: 40%;
+}
+
+.mrtb-con.product .m-left .f-slide .stack-slide {
+	width: 92%;
+	top: 38px;
+}
+
+.mrtb-con.product .m-left .f-slide .stack-slide .slide-item,
+.mrtb-con.product .m-left .f-slide .stack-slide li {
+	width: 94%;
+	height: 355px;
+}
+
+.mrtb-con.product .m-left .f-slide .stack-slide .u-img {
+	width: 310px;
+	height: 331px;
+}
+
+.mrtb-con.product .m-left .f-slide .stack-slide .u-img img {
+	max-width: 305px;
+	max-height: 320px;
+	height: 320px;
+}
+
+.mrtb-con.product .lou1 .f-slide {
+	background-color: #82dded;
+	background-image: linear-gradient(to bottom, #7674e3, #212f90);
+}
+
+/* 产品内容 */
+.mrtb-con.product .m-right {
+	margin-left: 2%;
+	width: 57%;
+	border-left: 0px;
+}
+
+.proTable table {
+	margin-top: 10px;
+}
+
+.proTable table tbody {
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.proTable table tbody .pt-name {
+	background: #f7f7f7;
+	width: 160px;
+	text-align: right;
+	padding-right: 15px;
+}
+
+.proTable table tbody .pt-cent {
+	padding-left: 15px;
+}
+
+.proTable table tbody .pt-cent.more {
+	line-height: 25px;
+	padding: 10px 15px;
+	box-sizing: border-box;
+}
+
+.m-left.contact {
+	height: 550px;
+	border-left: 1px solid #efefe;
+}
+
+.m-right.lou2 h1 {
+	font-size: 22px;
+	line-height: 30px;
+	overflow: hidden;
+	color: #333;
+	margin-bottom: 15px;
+	max-height: 60px;
+
+}
+
+.m-right.lou2 p.proprice {
+	background: url(../images/newicons.png) no-repeat 0px -274px scroll;
+	height: 63px;
+	line-height: 63px;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+
+.m-right p.proprice i,
+.m-right.lou2 p i {
+	color: #999;
+	margin-right: 20px;
+	float: left;
+	font-style: initial;
+}
+
+.m-right p.proprice span {
+	color: #1A5FB9;
+	float: left;
+	line-height: 60px;
+	font-size: 16px;
+}
+
+.m-right.lou2 p {
+	font-size: 14px;
+	line-height: 41px;
+	color: #4c4c4c;
+	height: 41px;
+	overflow: hidden;
+	padding-left: 20px;
+}
+
+.proSave a:hover {
+	color: #1A5FB9;
+}
+
+/*-- 右侧 --*/
+
+.proRight.fixed {
+	position: fixed;
+	transition: all .4s;
+	top: 87px;
+	right: 63px;
+	_position: absolute;
+	z-index:99
+}
+
+.proRight h2 {
+	height: 45px;
+	line-height: 45px;
+	padding-left: 20px;
+	color: #333;
+	font-size: 16px;
+	border-bottom: #e4e4e4 solid 1px;
+	background: #fafafa;
+}
+
+.proRight h2 .icon-red {
+	height: 18px;
+	margin-top: 14px
+}
+
+.companyName {
+	height: 77px;
+	padding: 0px 0px 0px 20px;
+	background: url("../images/newicons.png") no-repeat 0px -189px scroll;
+}
+
+.companyName h3 {
+	color: #1A5FB9;
+	font-size: 14px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	height: 20px;
+	line-height: 20px;
+	padding: 13px 5px 0px 0px;
+}
+
+.companyName h3 a {
+	color: #1A5FB9;
+}
+
+.companyName h3 a:hover {
+	color: #1A5FB9;
+	text-decoration: none;
+}
+
+.companyName .jwsy {
+	margin-top: 10px;
+	font-size: 12px;
+	height: 25px;
+	line-height: 25px;
+}
+
+.companyName .jwsy1 {
+	background-color: #1A5FB9;
+	color: #fff;
+	border-radius: 2px;
+	text-align: center;
+	padding: 2px 6px;
+}
+
+.companyName .jwsy1 a {
+	color: #fff
+}
+
+.companyName .jwsy1:hover,
+.companyName .jwsy2:hover {
+	opacity: .8;
+	filter: alpha(opacity=80);
+}
+
+.companyName .jwsy2 {
+	background-color: #9E9E9E;
+	color: #fff;
+	border-radius: 2px;
+	text-align: center;
+	padding: 2px 6px;
+	margin-right: 5px;
+}
+
+.companyName .jwsy3 {
+	background-color: #607D8B;
+	color: #fff;
+	border-radius: 2px;
+	text-align: center;
+	padding: 2px 6px;
+}
+
+.shopinfo .proRight.absBtm {
+	position: absolute !important;
+	bottom: 0 !important;
+	top: auto !important;
+}
+
+.proRight p {
+	height: auto;
+	overflow: hidden;
+	line-height: 30px;
+	padding: 0px 5px 0px 20px;
+}
+
+.proRight p:before,
+.proRight p:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+.proRight p i {
+	color: #999;
+	float: left;
+	font-size: 12px;
+	padding-right: 4px;
+	/* width: 60px; */
+	text-align: right;
+	font-style: initial;
+}
+
+.companyInfo {
+	height: auto;
+	overflow: hidden;
+	border-top: #e4e4e4 solid 1px;
+	border-bottom: #e4e4e4 solid 1px;
+	padding: 10px 0px 0px 20px;
+}
+
+/*-- 公司信息 --*/
+.companyInfo {
+	display: flex;
+	flex-wrap: wrap;
+	height: auto;
+	overflow: hidden;
+	border-top: #e4e4e4 solid 1px;
+	border-bottom: #e4e4e4 solid 1px;
+	padding: 10px 0px 0px 20px;
+}
+
+.companyInfo a {
+	width: 27%;
+	height: 28px;
+	float: left;
+	margin-right: 10px;
+	border: #e4e4e4 solid 1px;
+	line-height: 28px;
+	border-radius: 3px;
+	margin: 0px 10px 10px 0px;
+	padding-left: 34px;
+	color: #535353;
+	background: #f9f9f9 url("../images/newicons.png") no-repeat;
+}
+
+.companyInfo a:hover {
+	color: #1A5FB9;
+	text-decoration: none;
+}
+
+.companyInfo a.introduce {
+	background-position: -514px -126px;
+	padding: 0;
+	padding-left: 34px;
+	font-size: 12px;
+	border: #e4e4e4 solid 1px;
+}
+
+.companyInfo a.position {
+	background-position: -514px -154px;
+}
+
+.companyInfo a.website {
+	background-position: -514px -178px;
+}
+
+.companyInfo a.infos {
+	background-position: -514px -207px;
+}
+
+.companyInfo a.newPro {
+	background-position: -514px -238px;
+}
+
+.companyInfo a.goldShop {
+	background-position: -514px -262px;
+}
+
+/*-- 公司链接菜单 --*/
+.contactUs {
+	height: auto;
+	overflow: hidden;
+	padding: 15px 20px 5px 20px;
+}
+
+.contactUs a {
+	width: 115px;
+	height: 40px;
+	border-radius: 3px;
+	display: block;
+	color: #fff;
+	line-height: 40px;
+	font-size: 14px;
+	margin-bottom: 15px;
+	padding-left: 90px
+}
+
+.contactUs a.contact {
+	background: #1d8622 url(../images/newicons.png) no-repeat -749px 7px scroll;
+}
+
+.contactUs a.inquiry {
+	background: #05a1b5 url("../images/newicons.png") no-repeat -749px -27px scroll;
+}
+
+.contactUs a.tobuy {
+	background: #1A5FB9;
+	padding-left: 0px;
+	width: 205px;
+	text-align: center;
+}
+
+.contactUs a.tocart {
+	background: #FF5722 url("../images/newicons.png") no-repeat -749px -61px scroll;
+}
+
+.contactUs a:hover {
+	text-decoration: none;
+	opacity: .8;
+	filter: alpha(opacity=80);
+	color: #fff
+}
+
+#contact {
+	border-left: 1px solid #efefef;
+	background: #fff;
+}

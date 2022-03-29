@@ -1,0 +1,1 @@
+var DTPath = "https://demo08.mbkfw.com/";var DTMob = "https://demo08.mbkfw.com/mobile/";var SKPath = "https://demo08.mbkfw.com/skin/st08skin/";var MEPath = "https://demo08.mbkfw.com/member/";var DTEditor = "ueditor";var CKDomain = "";var CKPath = "/";var CKPrex = "DfR_";
